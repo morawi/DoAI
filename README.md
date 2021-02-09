@@ -14,4 +14,5 @@ Does the model do a better job on CIFAR-10 (has 10 classes) or CIFAR-100 (has 10
  
 
 Methods
+
 This work is straightforward: data and code are publicly available. PyTorch platform supports data reading and deep learning models. Still, I can provide a novel technique that can be used to investigate the problem. Students need to write the code necessary to implement the technique, on top of PyTorch models, and run the experiments. Other data sets containing more categories will also be used.
