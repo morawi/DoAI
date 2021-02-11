@@ -209,8 +209,8 @@ def main_worker(gpu, ngpus_per_node, args):
     
     # Data loading code
     # to use ImageNet data, use the dataloader similar to https://github.com/lukemelas/EfficientNet-PyTorch/blob/master/examples/imagenet/main.py
-    
-    train_dataset, _ = get_data(dataset_name='cifar100')  
+    dataset_name = 'cifar100'
+    train_dataset, _ = get_data(dataset_name=dataset_name)  
     
     image_size = train_dataset[1][0].size
     crop_size = train_dataset[1][0].size
@@ -236,7 +236,7 @@ def main_worker(gpu, ngpus_per_node, args):
         normalize,
     ])
     
-    train_dataset,  val_dataset  = get_data(dataset_name='cifar100', 
+    train_dataset,  val_dataset  = get_data(dataset_name=dataset_name, 
                                             trn_transforms=trn_transforms, 
                                             val_transforms=val_transforms)
     
