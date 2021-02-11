@@ -172,10 +172,10 @@ def get_data(dataset_name='cifar100', trn_transforms=None, val_transforms=None):
             val_dataset = datasets.CIFAR100('../data', train=False, download=True,
                         transform = val_transforms,  )   
         elif dataset_name=='cifar10':
-            train_dataset = datasets.CIFAR100('../data', train=True, download=True,
+            train_dataset = datasets.CIFAR10('../data', train=True, download=True,
                         transform = trn_transforms, 
                         )                                
-            val_dataset = datasets.CIFAR100('../data', train=False, download=True,
+            val_dataset = datasets.CIFAR10('../data', train=False, download=True,
                         transform = val_transforms,  )  
         
         elif dataset_name=='ImageNet':
