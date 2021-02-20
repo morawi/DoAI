@@ -120,7 +120,7 @@ def main():
         out_file_name = (args.dataset_name +'-'+args.arch+'-' +
                          str(datetime.now().ctime())).replace(':','-')
         print('Output sent to ', out_file_name)
-        sys.stdout = open(out_file_name+'.txt',  'w')
+        sys.stdout = open(out_file_name+'.txt',  'w') 
     
     print(args)
     if args.seed is not None:
