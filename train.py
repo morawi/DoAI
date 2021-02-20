@@ -26,6 +26,10 @@ import torchvision.transforms as transforms
 import torchvision.datasets as datasets
 import torchvision.models as models
 
+import numpy as np
+from scipy import stats
+
+from torch.utils.data import SubsetRandomSampler as SubSetRandSampler
 from efficientnet_pytorch import EfficientNet # Install with: pip install efficientnet_pytorch 
 ''' https://github.com/lukemelas/EfficientNet-PyTorch '''
 
@@ -89,7 +93,7 @@ parser.add_argument('--multiprocessing-distributed', action='store_true',
                          'fastest way to use PyTorch for either single node or '
                          'multi node data parallel training')
 
-parser.add_argument("--redirect-std-to-file", default=False, type=lambda x: (str(x).lower() == 'true'),  help="True/False - default False; if True sets all console output to file")
+parser.add_argument("--redirect-stdout-to-file", default=False, type=lambda x: (str(x).lower() == 'true'),  help="True/False - default False; if True sets all console output to file")
 parser.add_argument("--experiment-name", type=str, default='results', help="name of the folder inside saved_models")
 
 
@@ -104,12 +108,17 @@ def main():
     # used for debugging    
     # args.batch_size = 16
     # args.print_freq = 200
-    args.epochs=1
-    args.arch = 'effnet'
+    # args.epochs=1
+    # args.arch = 'effnet'
     args.pretrained=True
+    args.dataset_name='cifar10' # 'cifar10' or 'cifar100' or 'ImageNet' or other datasets  
+    args.num_permutations = 1000  # we need to go up to a 1000 (that's the least)
+    args.permutation_sampler_size = 5000
+    args.redirect_stdout_to_file=True
         
-    if  args.redirect_std_to_file:    # sending output to file                
-        out_file_name = args.experiment_name + str(datetime.now().ctime())
+    if  args.redirect_stdout_to_file:    # sending output to file                
+        out_file_name = (args.dataset_name +'-'+args.arch+'-' +
+                         str(datetime.now().ctime())).replace(':','-')
         print('Output sent to ', out_file_name)
         sys.stdout = open(out_file_name+'.txt',  'w')
     
@@ -209,8 +218,8 @@ def main_worker(gpu, ngpus_per_node, args):
     
     # Data loading code
     # to use ImageNet data, use the dataloader similar to https://github.com/lukemelas/EfficientNet-PyTorch/blob/master/examples/imagenet/main.py
-    dataset_name = 'cifar100'
-    train_dataset, _ = get_data(dataset_name=dataset_name)  
+       
+    train_dataset, _ = get_data(dataset_name=args.dataset_name)  
     
     image_size = train_dataset[1][0].size
     crop_size = train_dataset[1][0].size
@@ -236,7 +245,7 @@ def main_worker(gpu, ngpus_per_node, args):
         normalize,
     ])
     
-    train_dataset,  val_dataset  = get_data(dataset_name=dataset_name, 
+    train_dataset,  val_dataset  = get_data(dataset_name=args.dataset_name, 
                                             trn_transforms=trn_transforms, 
                                             val_transforms=val_transforms)
     
@@ -255,7 +264,7 @@ def main_worker(gpu, ngpus_per_node, args):
         batch_size=args.batch_size, shuffle=False,
         num_workers=args.workers, pin_memory=True)
     
-    
+    val_loader = get_rand_sample_loader(val_dataset, args)  
     
     # create model        
     num_classes = len(train_dataset.classes)
@@ -350,11 +359,12 @@ def main_worker(gpu, ngpus_per_node, args):
             print("=> no checkpoint found at '{}'".format(args.resume))
 
     cudnn.benchmark = True
-
     
 
     if args.evaluate:
         validate(val_loader, model, criterion, args)
+        p_acc1, p_acc5 = validate_significance(val_loader, model, criterion, args)
+        print(p_acc1, p_acc5)
         return
 
     for epoch in range(args.start_epoch, args.epochs):
@@ -371,7 +381,7 @@ def main_worker(gpu, ngpus_per_node, args):
         # remember best acc@1 and save checkpoint
         is_best = acc1 > best_acc1
         best_acc1 = max(acc1, best_acc1)
-
+        
         if not args.multiprocessing_distributed or (args.multiprocessing_distributed
                 and args.rank % ngpus_per_node == 0):
             save_checkpoint({
@@ -381,6 +391,10 @@ def main_worker(gpu, ngpus_per_node, args):
                 'best_acc1': best_acc1,
                 'optimizer' : optimizer.state_dict(),
             }, is_best)
+            
+    # Testing for significance of classification
+    p_acc1, p_acc5 = validate_significance(val_loader, model, criterion, args)
+    print(p_acc1, p_acc5)
 
 
 def train(train_loader, model, criterion, optimizer, epoch, args):
@@ -421,7 +435,6 @@ def train(train_loader, model, criterion, optimizer, epoch, args):
         losses.update(loss.item(), img_x_size)
         top1.update(acc1[0], img_x_size)
         top5.update(acc5[0], img_x_size)
-        
 
         # compute gradient and do SGD step
         optimizer.zero_grad()
@@ -434,6 +447,72 @@ def train(train_loader, model, criterion, optimizer, epoch, args):
 
         if i % args.print_freq == 0:
             progress.display(i)
+
+def get_rand_sample_loader(dataset, args):
+    loader = torch.utils.data.DataLoader(
+            dataset,
+            batch_size=args.batch_size,         
+            num_workers=args.workers,             
+            sampler = SubSetRandSampler(torch.randint(0, len(dataset), (args.permutation_sampler_size,)) ), 
+            shuffle= False, 
+            pin_memory=True)
+    return loader
+
+
+def validate_significance(val_loader, model, criterion, args):   
+       
+    # switch to evaluate mode    
+    model.eval()
+    
+    # lists to store accuracies
+    dist_acc1 = []
+    dist_acc1_chance = []
+    dist_acc5 = []
+    dist_acc5_chance = []
+    
+    for ss in range(0, args.num_permutations):
+        
+        val_loader = get_rand_sample_loader(val_loader.dataset, args)  
+        
+        acc1_over_one_permutaion = 0
+        acc1_chance_over_one_permutation = 0
+        acc5_over_one_permutaion = 0
+        acc5_chance_over_one_permutation = 0
+        cnt = 0
+        with torch.no_grad():            
+            for i, (images, target) in enumerate(val_loader):                                      
+                
+                if args.gpu is not None:
+                    images = images.cuda(args.gpu, non_blocking=True)
+                if torch.cuda.is_available():
+                    target = target.cuda(args.gpu, non_blocking=True)
+                
+                # compute output
+                output = model(images)            
+                
+                # measure accuracy on true labels
+                acc1, acc5 = accuracy(output, target, topk=(1, 5))
+                acc1_over_one_permutaion += acc1.item()
+                acc5_over_one_permutaion += acc5.item()
+                
+                # now, measure accuracy on permuted labels
+                target = target[torch.randperm(len(target))]# scrambling the labels
+                acc1_perm, acc5_perm = accuracy(output, target, topk=(1, 5))
+                acc1_chance_over_one_permutation += acc1_perm.item()
+                acc5_chance_over_one_permutation += acc5_perm.item()  
+                cnt +=1
+                
+        dist_acc1.append(acc1_over_one_permutaion/cnt)
+        dist_acc1_chance.append(acc1_chance_over_one_permutation/cnt)        
+        dist_acc5.append(acc5_over_one_permutaion/cnt)
+        dist_acc5_chance.append(acc5_chance_over_one_permutation/cnt)        
+        
+       
+    p_acc1 = stats.ttest_ind(dist_acc1, dist_acc1_chance, equal_var=False)
+    p_acc5 = stats.ttest_ind(dist_acc5, dist_acc5_chance, equal_var=False)
+      
+
+    return p_acc1, p_acc5
 
 
 def validate(val_loader, model, criterion, args):
