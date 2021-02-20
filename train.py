@@ -94,7 +94,7 @@ parser.add_argument('--multiprocessing-distributed', action='store_true',
                          'multi node data parallel training')
 
 parser.add_argument("--redirect-stdout-to-file", default=False, type=lambda x: (str(x).lower() == 'true'),  help="True/False - default False; if True sets all console output to file")
-parser.add_argument("--experiment-name", type=str, default='results', help="name of the folder inside saved_models")
+parser.add_argument("--dataset-name", type=str, default='cifar100', help="name of dataset")
 
 
 
@@ -465,10 +465,10 @@ def validate_significance(val_loader, model, criterion, args):
     model.eval()
     
     # lists to store accuracies
-    dist_acc1 = []
-    dist_acc1_chance = []
-    dist_acc5 = []
-    dist_acc5_chance = []
+    vec_acc1 = []
+    vec_acc1_chance = []
+    vec_acc5 = []
+    vec_acc5_chance = []
     
     for ss in range(0, args.num_permutations):
         
@@ -502,14 +502,14 @@ def validate_significance(val_loader, model, criterion, args):
                 acc5_chance_over_one_permutation += acc5_perm.item()  
                 cnt +=1
                 
-        dist_acc1.append(acc1_over_one_permutaion/cnt)
-        dist_acc1_chance.append(acc1_chance_over_one_permutation/cnt)        
-        dist_acc5.append(acc5_over_one_permutaion/cnt)
-        dist_acc5_chance.append(acc5_chance_over_one_permutation/cnt)        
+        vec_acc1.append(acc1_over_one_permutaion/cnt)
+        vec_acc1_chance.append(acc1_chance_over_one_permutation/cnt)        
+        vec_acc5.append(acc5_over_one_permutaion/cnt)
+        vec_acc5_chance.append(acc5_chance_over_one_permutation/cnt)        
         
        
-    p_acc1 = stats.ttest_ind(dist_acc1, dist_acc1_chance, equal_var=False)
-    p_acc5 = stats.ttest_ind(dist_acc5, dist_acc5_chance, equal_var=False)
+    p_acc1 = stats.ttest_ind(vec_acc1, vec_acc1_chance, equal_var=False)
+    p_acc5 = stats.ttest_ind(vec_acc5, vec_acc5_chance, equal_var=False)
       
 
     return p_acc1, p_acc5
