@@ -29,6 +29,8 @@ import torchvision.models as models
 import numpy as np
 from scipy import stats
 
+from tqdm import tqdm #import tqdm from tqdm library for progress meter
+
 from torch.utils.data import SubsetRandomSampler as SubSetRandSampler
 from efficientnet_pytorch import EfficientNet # Install with: pip install efficientnet_pytorch 
 ''' https://github.com/lukemelas/EfficientNet-PyTorch '''
@@ -470,7 +472,7 @@ def validate_significance(val_loader, model, criterion, args):
     vec_acc5 = []
     vec_acc5_chance = []
     
-    for ss in range(0, args.num_permutations):
+    for ss in tqdm(range(0, args.num_permutations)):  #progress meter will show number of permutations left to complete.
         
         val_loader = get_rand_sample_loader(val_loader.dataset, args)  
         
