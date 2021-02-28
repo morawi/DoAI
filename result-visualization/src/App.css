@@ -1,0 +1,53 @@
+.App {
+  text-align: center;
+}
+
+.header-container{  /* "Do AI models learn" box */
+  background-color: rgb(238, 238, 238);
+  margin: auto; /* Align box to centre no matter screensize */
+  width: 90%;
+  border-radius: 5px; /* round the edges */
+  box-shadow: 10px 5px 8px  #cacaca;
+}
+
+.header-container h2{   /* "Do AI models learn" text */
+  padding: 10px; /* Padding around the text */
+}
+
+.graph-container{  /* "Do AI models learn" box */
+  box-sizing: border-box;
+  height: 460px;
+}
+
+/*
+  TODO: May have to update this graph style below if inserting the graph messes up with the proportions
+*/
+.graph{
+  margin: auto;
+  float: left;  /* Make it so grpah is side by side instead of one ontop of the other */
+  width: 50%;   
+  height: 460px;
+  box-shadow: 1px 1px 1px 1px black;  /* get rid of shadow once graphs are added 
+  Box shadow is only being used to outline the where the graphs will be*/
+}
+
+.options-container{
+  padding-bottom: 15px;
+}
+
+.details-container{
+  margin-top: 20px;
+  height: 200px;
+  display: flex;  /* Google flexbox if you dont know what it is, its used alot in css */
+  flex-direction: row;  /* Make items go side by side horizantally  */
+}
+
+.detail{    /* changes will be needed to this, deatiled in details.js file */
+  width: 30%; 
+  margin: auto;  
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: rgb(238, 238, 238);
+  box-shadow: 10px 5px 8px  #cacaca;
+}
