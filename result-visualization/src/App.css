@@ -24,7 +24,7 @@
 */
 .graph{
   margin: auto;
-  float: left;  /* Make it so grpah is side by side instead of one ontop of the other */
+  float: left;  /* Make it so graph is side by side instead of one ontop of the other */
   width: 50%;   
   height: 460px;
   box-shadow: 1px 1px 1px 1px black;  /* get rid of shadow once graphs are added 
