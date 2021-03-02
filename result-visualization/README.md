@@ -10,7 +10,9 @@ Make the current repo this result-visualization folder.
 
 ### `npm install`
 Run the npm install command to install all the modules in the package.json file allowing you to run the web-page easily. .\
-Install all modules in the package.json file in order to run the file
+Install all modules in the package.json file in order to run the file .\
+You may also need to install chokidar this is done by  simply running .\
+`npm install chokidar`
 
 ### `npm start`
 Runs the app in the development mode.\
