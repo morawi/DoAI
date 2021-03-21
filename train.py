@@ -98,6 +98,8 @@ parser.add_argument('--multiprocessing-distributed', action='store_true',
 parser.add_argument("--redirect-stdout-to-file", default=False, type=lambda x: (str(x).lower() == 'true'),  help="True/False - default False; if True sets all console output to file")
 parser.add_argument("--dataset-name", type=str, default='cifar100', help="name of dataset")
 
+parser.add_argument("--output-filename", type=str, default=None, help="name of output file")
+
 
 best_acc1 = 0
 
@@ -118,7 +120,10 @@ def main():
     args.redirect_stdout_to_file=True
         
     if  args.redirect_stdout_to_file:  # sending output to file           
-        out_file_name = (args.dataset_name +'-'+args.arch+'-' +
+        if  args.output_filename is not None:
+            out_file_name = args.output_filename  
+        else:        
+            out_file_name = (args.dataset_name +'-'+args.arch+'-' +
                          str(datetime.now().ctime())).replace(':','-')
         print('Output sent to ', out_file_name)
         sys.stdout = open(out_file_name+'.txt',  'w') 
