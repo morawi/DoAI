@@ -114,7 +114,7 @@ def main():
     # args.epochs=1
     # args.arch = 'effnet'
     args.pretrained=True
-    args.dataset_name='cifar10' # 'cifar10' or 'cifar100' or 'ImageNet' or other datasets  
+    # args.dataset_name='cifar10' # 'cifar10' or 'cifar100' or 'ImageNet' or other datasets  
     args.num_permutations = 1000  # we need to go up to a 1000 (that's the least)
     args.permutation_sampler_size = 5000
     args.redirect_stdout_to_file=True
@@ -163,6 +163,7 @@ def main():
 
 
 def get_data(dataset_name='cifar100', trn_transforms=None, val_transforms=None):
+    print('Using {} dataset'.format(dataset_name))
     if trn_transforms is None:
         val_dataset=[]
         if dataset_name=='cifar100':
