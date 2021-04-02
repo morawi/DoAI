@@ -1,6 +1,6 @@
-  
 const Options = () => {
     let list = [];      //Maybe change this to arraylist if needed
+    var data = require('./results.json'); 
     const handleClick = (e) => {
         console.log("Button clicked");
         //Here we can use the json object to create a list of all models and then 
@@ -8,14 +8,18 @@ const Options = () => {
         //TODO: get models from a json file and add them to list. 
     }
     return (
-    <div className ="options-container">
-        <div class="dropdown">
-  <span>Mouse over me</span>
+<div class="dropdown">
+  <button class="dropbtn">Select Model</button>
   <div class="dropdown-content">
-    <p>Hello World!</p>
+    <a href="#">vgg19</a>
+    <a href="#">squeezenet1_1</a>
+    <a href="#">squeezenet1_0</a>
+    <a href="#">resnet18</a>
+    <a href="#">densenet161</a>
+    <a href="#">densenet121</a>
+    <a href="#">vgg13</a>
   </div>
 </div>
-    </div>
     )
     //TODO: make that button a drop-down box displaying all options in List
 }
