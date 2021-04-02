@@ -19,9 +19,6 @@ const Details = (props) => {
                
            </div>
            <div className="detail">
-               <p><i>T-Test: </i>{ data.vgg19.cifar10.t_test }</p>
-           </div>
-           <div className="detail">
                <p><i>Reason: </i> { data.vgg19.reason }</p>
            </div>
        </div>
