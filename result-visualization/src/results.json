@@ -2,14 +2,12 @@
     "trained" : {
         "vgg19" : {
             "cifar10" : {
-                "results": [9.6848, 48.52],
-                "t_test" : 0,
-                "p_val" : 1                
+                "accuracy": [9.6848, 48.52],
+                "t_test" : [0,1]            
             },
             "cifar100" : {
-                "results": [1.04, 4.9],
-                "t_test" : 0,
-                "p_val" : 1
+                "accuracy": [1.04, 4.9],
+                "t_test" : [0,1]
             },
             "name" : "vgg19",
             "details" : "This is where to input what it is",
@@ -17,14 +15,12 @@
         },
         "squeezenet1_1": {
             "cifar10" : {
-                "results": [10.48, 49.44],
-                "t_test" : 0,
-                "p_val" : 1
+                "accuracy": [10.48, 49.44],
+                "t_test" : [0,1]
             },
             "cifar100" : {
-                "results": [1.06, 4.74],
-                "t_test" : 0,
-                "p_val" : 1
+                "accuracy": [1.06, 4.74],
+                "t_test" : [0,1]
             },
             "name" : "squeezenet1_1",
             "details" : "This is where to input what it is",
@@ -32,14 +28,12 @@
         },
         "squeezenet1_0": {
             "cifar10" : {
-                "results": [9.9, 50.48],
-                "t_test" : 0,
-                "p_val" : 1
+                "accuracy": [9.9, 50.48],
+                "t_test" : [0,1]
             },
             "cifar100" : {
-                "results": [1.2, 4.68],
-                "t_test" : 0,
-                "p_val" : 1
+                "accuracy": [1.2, 4.68],
+                "t_test" : [0,1]
             },
             "name" : "squeezenet1_0",
             "details" : "This is where to input what it is",
@@ -47,6 +41,6 @@
         }
     },
     "soa":{
-        
+
     }
 }

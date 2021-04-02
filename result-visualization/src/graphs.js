@@ -2,7 +2,7 @@ import { Bar } from "react-chartjs-2"
 
 const GraphBox = () => {
     var data = require('./results.json');
-    var results = [data.trained.vgg19.cifar10.results[0],data.trained.vgg19.cifar10.results[1],data.trained.vgg19.cifar100.results[0], data.trained.vgg19.cifar100.results[1]]; //first 2 elements for cifar10, 3rd and 4th for cifar 100
+    var results = [data.trained.vgg19.cifar10.accuracy[0],data.trained.vgg19.cifar10.accuracy[1],data.trained.vgg19.cifar100.accuracy[0], data.trained.vgg19.cifar100.accuracy[1]]; //first 2 elements for cifar10, 3rd and 4th for cifar 100
     return (
         <div className="graph-container">
             <div className="graph">
@@ -48,11 +48,11 @@ const GraphBox = () => {
             <div className="graph">
                 <h3> T-Test Statistics</h3>
                 <p><b>Cifar 10:</b></p>
-                <p> T-Test value is {data.trained.vgg19.cifar10.t_test}</p>
-                <p> P-value is {data.trained.vgg19.cifar10.p_val}</p>
+                <p> T-Test value is {data.trained.vgg19.cifar10.t_test[0]}</p>
+                <p> P-value is {data.trained.vgg19.cifar10.t_test[1]}</p>
                 <p><b>Cifar 100:</b></p>
-                <p> T-Test value is {data.trained.vgg19.cifar100.t_test}</p>
-                <p> P-value is {data.trained.vgg19.cifar100.p_val}</p>
+                <p> T-Test value is {data.trained.vgg19.cifar100.t_test[0]}</p>
+                <p> P-value is {data.trained.vgg19.cifar100.t_test[1]}</p>
             </div>
         </div>
     )
