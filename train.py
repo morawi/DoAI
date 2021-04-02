@@ -371,7 +371,8 @@ def main_worker(gpu, ngpus_per_node, args):
     if args.evaluate:
         validate(val_loader, model, criterion, args)
         p_acc1, p_acc5 = validate_significance(val_loader, model, criterion, args)
-        print(p_acc1, p_acc5)
+        print("Test Statistics @1:", p_acc1)
+        print("Test Statistics @5:", p_acc5)
         return
 
     for epoch in range(args.start_epoch, args.epochs):
