@@ -8,23 +8,21 @@ const Details = (props) => {
 
         TODO: Implement the data of the JSON object (model) to be displayed
         TODO: Implement Scrollable list 
-    */
-   var test = {
-        model: "Model 1",
-        t_test: "T-Test data will be displayed here",
-        reason: "The data displayed is because ..."
-   }
+    */ 
+
+    var data = require('./results.json');
+    console.log(data);
     return (
        <div className="details-container">
            <div className="detail">
-               <p><i>Model: </i> { test.model}</p>
+               <p><i>{ data.vgg19.name }: </i> { data.vgg19.details }</p>
                
            </div>
            <div className="detail">
-               <p><i>T-Test: </i>{ test.t_test }</p>
+               <p><i>T-Test: </i>{ data.vgg19.cifar10.t_test }</p>
            </div>
            <div className="detail">
-               <p><i>Reason: </i> { test.reason }</p>
+               <p><i>Reason: </i> { data.vgg19.reason }</p>
            </div>
        </div>
     );
