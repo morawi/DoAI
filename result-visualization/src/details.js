@@ -15,11 +15,11 @@ const Details = (props) => {
     return (
        <div className="details-container">
            <div className="detail">
-               <p><i>{ data.vgg19.name }: </i> { data.vgg19.details }</p>
+               <p><i>{ data.trained.vgg19.name }: </i> { data.trained.vgg19.details }</p>
                
            </div>
            <div className="detail">
-               <p><i>Reason: </i> { data.vgg19.reason }</p>
+               <p><i>Reason: </i> { data.trained.vgg19.reason }</p>
            </div>
        </div>
     );

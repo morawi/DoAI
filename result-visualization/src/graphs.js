@@ -2,7 +2,7 @@ import { Bar } from "react-chartjs-2"
 
 const GraphBox = () => {
     var data = require('./results.json');
-    var results = [data.vgg19.cifar10.results[0],data.vgg19.cifar10.results[1],data.vgg19.cifar100.results[0], data.vgg19.cifar100.results[1]]; //first 2 elements for cifar10, 3rd and 4th for cifar 100
+    var results = [data.trained.vgg19.cifar10.results[0],data.trained.vgg19.cifar10.results[1],data.trained.vgg19.cifar100.results[0], data.trained.vgg19.cifar100.results[1]]; //first 2 elements for cifar10, 3rd and 4th for cifar 100
     return (
         <div className="graph-container">
             <div className="graph">
@@ -11,7 +11,7 @@ const GraphBox = () => {
                         labels: ['CIFAR-10: Accuracy 1', 'CIFAR-10: Accuracy 5', 'CIFAR-100: Accuracy 1', 'CIFAR-100: Accuracy 5'],
                         datasets: [{
                                 label: 'vgg19',
-                                data: [9.6848, 48.52, 1.04, 4.9],   
+                                data: results,   
                                 backgroundColor: [
                                     'rgba(255, 99, 132, 0.2)',
                                     'rgba(255, 99, 132, 0.2)',
@@ -34,6 +34,11 @@ const GraphBox = () => {
                         yAxes: [{
                             ticks: {
                                 beginAtZero: true, 
+                                min: 0,
+                                max: 100,
+                                scaleOverride: true,
+                                scaleSteps: 10,
+                                scaleStepWidth: 10,
                             }
                         }]
                     }
@@ -43,11 +48,11 @@ const GraphBox = () => {
             <div className="graph">
                 <h3> T-Test Statistics</h3>
                 <p><b>Cifar 10:</b></p>
-                <p> T-Test value is {data.vgg19.cifar10.t_test}</p>
-                <p> P-value is {data.vgg19.cifar10.p_val}</p>
+                <p> T-Test value is {data.trained.vgg19.cifar10.t_test}</p>
+                <p> P-value is {data.trained.vgg19.cifar10.p_val}</p>
                 <p><b>Cifar 100:</b></p>
-                <p> T-Test value is {data.vgg19.cifar100.t_test}</p>
-                <p> P-value is {data.vgg19.cifar100.p_val}</p>
+                <p> T-Test value is {data.trained.vgg19.cifar100.t_test}</p>
+                <p> P-value is {data.trained.vgg19.cifar100.p_val}</p>
             </div>
         </div>
     )
