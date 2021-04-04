@@ -11,7 +11,7 @@ const Details = (props) => {
     */ 
 
     var data = require('./results.json');
-    console.log(data);
+    //console.log(data);
     return (
        <div className="details-container">
            <div className="detail">

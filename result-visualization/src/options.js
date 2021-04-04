@@ -1,4 +1,4 @@
-const Options = () => {
+const Options = (props) => {
     let list = [];      //Maybe change this to arraylist if needed
     var data = require('./results.json'); 
     const handleClick = (e) => {
@@ -7,10 +7,12 @@ const Options = () => {
         // using JSX we down below we can do a loop that will iterate through and display each one in a drop down box.
         //TODO: get models from a json file and add them to list. 
     }
+    //console.log(props)
+    window.data = data.trained.vgg19;
     return (
-<div class="dropdown">
-  <button class="dropbtn">Select Model</button>
-  <div class="dropdown-content">
+<div className="dropdown">
+  <button className="dropbtn">Select Model</button>
+  <div className="dropdown-content">
     <a href="#">vgg19</a>
     <a href="#">squeezenet1_1</a>
     <a href="#">squeezenet1_0</a>

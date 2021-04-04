@@ -1,8 +1,9 @@
 import { Bar } from "react-chartjs-2"
 
-const GraphBox = () => {
+const GraphBox = (props) => {
     var data = require('./results.json');
     var results = [data.trained.vgg19.cifar10.accuracy[0],data.trained.vgg19.cifar10.accuracy[1],data.trained.vgg19.cifar100.accuracy[0], data.trained.vgg19.cifar100.accuracy[1]]; //first 2 elements for cifar10, 3rd and 4th for cifar 100
+    console.log(window.data)
     return (
         <div className="graph-container">
             <div className="graph">
