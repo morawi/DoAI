@@ -402,7 +402,8 @@ def main_worker(gpu, ngpus_per_node, args):
             
     # Testing for significance of classification
     p_acc1, p_acc5 = validate_significance(val_loader, model, criterion, args)
-    print(p_acc1, p_acc5)
+    print("Test Statistics @1:", p_acc1)
+    print("Test Statistics @5:", p_acc5)
 
 
 def train(train_loader, model, criterion, optimizer, epoch, args):
