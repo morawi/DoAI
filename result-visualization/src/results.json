@@ -1,46 +1,317 @@
 {
-    "trained" : {
-        "vgg19" : {
-            "cifar10" : {
-                "accuracy": [9.6848, 48.52],
-                "t_test" : [0,1]            
-            },
-            "cifar100" : {
-                "accuracy": [1.04, 4.9],
-                "t_test" : [0,1]
-            },
-            "name" : "vgg19",
-            "details" : "This is where to input what it is",
-            "reason" : "Why the result is like this here"
+    "trained": {
+      "densenet121": {
+        "cifar10": {
+          "accuracy": [
+            72.68,
+            97.72
+          ],
+          "t_test": [
+            2621.04,
+            2064.41
+          ]
         },
-        "squeezenet1_1": {
-            "cifar10" : {
-                "accuracy": [10.48, 49.44],
-                "t_test" : [0,1]
-            },
-            "cifar100" : {
-                "accuracy": [1.06, 4.74],
-                "t_test" : [0,1]
-            },
-            "name" : "squeezenet1_1",
-            "details" : "This is where to input what it is",
-            "reason" : "Why the result is like this here"
+        "cifar100": {
+          "accuracy": [
+            44.76,
+            74.32
+          ],
+          "t_test": [
+            1807.13,
+            2982.71
+          ]
         },
-        "squeezenet1_0": {
-            "cifar10" : {
-                "accuracy": [9.9, 50.48],
-                "t_test" : [0,1]
-            },
-            "cifar100" : {
-                "accuracy": [1.2, 4.68],
-                "t_test" : [0,1]
-            },
-            "name" : "squeezenet1_0",
-            "details" : "This is where to input what it is",
-            "reason" : "Why the result is like this here"
-        }
+        "details": "",
+        "reason": ""
+      },
+      "densenet161": {
+        "cifar10": {
+          "accuracy": [
+            78.08,
+            98.56
+          ],
+          "t_test": [
+            2903.49,
+            2048.88
+          ]
+        },
+        "cifar100": {
+          "accuracy": [
+            44.04,
+            73.12
+          ],
+          "t_test": [
+            1756.01,
+            2943.05
+          ]
+        },
+        "details": "",
+        "reason": ""
+      },
+      "densenet169": {
+        "cifar10": {
+          "accuracy": [
+            70.48,
+            97.46
+          ],
+          "t_test": [
+            2428.28,
+            2077.46
+          ]
+        },
+        "cifar100": {
+          "accuracy": [
+            39.18,
+            69.88
+          ],
+          "t_test": [
+            1749.97,
+            2815.93
+          ]
+        },
+        "details": "",
+        "reason": ""
+      },
+      "densenet201": {
+        "cifar10": {
+          "accuracy": [
+            65.72,
+            96.44
+          ],
+          "t_test": [
+            2145.68,
+            1940.04
+          ]
+        },
+        "cifar100": {
+          "accuracy": [
+            36.5,
+            67.0
+          ],
+          "t_test": [
+            1554.91,
+            2537.63
+          ]
+        },
+        "details": "",
+        "reason": ""
+      },
+      "resnet18": {
+        "cifar10": {
+          "accuracy": [
+            79.22,
+            98.52
+          ],
+          "t_test": [
+            3018.19,
+            2018.25
+          ]
+        },
+        "cifar100": {
+          "accuracy": [
+            53.26,
+            81.0
+          ],
+          "t_test": [
+            2332.75,
+            3772.63
+          ]
+        },
+        "details": "Resnet models are cool",
+        "reason": "Performs better on CIFAR 10"
+      },
+      "resnet34": {
+        "cifar10": {
+          "accuracy": [
+            79.92,
+            98.46
+          ],
+          "t_test": [
+            3099.62,
+            2166.93
+          ]
+        },
+        "cifar100": {
+          "accuracy": [
+            48.68,
+            76.58
+          ],
+          "t_test": [
+            1960.44,
+            3198.78
+          ]
+        },
+        "details": "Resnet models are cool",
+        "reason": "Performs much better on CIFAR 10"
+      },
+      "vgg11": {
+        "cifar10": {
+          "accuracy": [
+            10.04,
+            50.24
+          ],
+          "t_test": [
+            "NaN",
+            "NaN"
+          ]
+        },
+        "cifar100": {
+          "accuracy": [
+            1.04,
+            5.22
+          ],
+          "t_test": [
+            "NaN",
+            "NaN"
+          ]
+        },
+        "details": "",
+        "reason": ""
+      },
+      "vgg11_bn": {
+        "cifar10": {
+          "accuracy": [
+            89.42,
+            99.6
+          ],
+          "t_test": [
+            3914.82,
+            2170.56
+          ]
+        },
+        "cifar100": {
+          "accuracy": [
+            61.16,
+            85.94
+          ],
+          "t_test": [
+            2599.04,
+            4202.78
+          ]
+        },
+        "details": "",
+        "reason": ""
+      },
+      "vgg13": {
+        "cifar10": {
+          "accuracy": [
+            9.78,
+            50.82
+          ],
+          "t_test": [
+            "NaN",
+            "NaN"
+          ]
+        },
+        "cifar100": {
+          "accuracy": [
+            1.02,
+            5.0
+          ],
+          "t_test": [
+            "NaN",
+            "NaN"
+          ]
+        },
+        "details": "",
+        "reason": ""
+      },
+      "vgg13_bn": {
+        "cifar10": {
+          "accuracy": [
+            88.14,
+            99.7
+          ],
+          "t_test": [
+            3929.33,
+            2104.95
+          ]
+        },
+        "cifar100": {
+          "accuracy": [
+            59.36,
+            85.84
+          ],
+          "t_test": [
+            2552.38,
+            4261.85
+          ]
+        },
+        "details": "",
+        "reason": ""
+      },
+      "vgg16": {
+        "cifar10": {
+          "accuracy": [
+            10.3,
+            49.24
+          ],
+          "t_test": [
+            "NaN",
+            "NaN"
+          ]
+        },
+        "cifar100": {
+          "accuracy": [
+            0.88,
+            5.38
+          ],
+          "t_test": [
+            "NaN",
+            "NaN"
+          ]
+        },
+        "details": "",
+        "reason": ""
+      },
+      "vgg16_bn": {
+        "cifar10": {
+          "accuracy": [
+            89.76,
+            99.62
+          ],
+          "t_test": [
+            4111.37,
+            2250.4
+          ]
+        },
+        "cifar100": {
+          "accuracy": [
+            "NaN",
+            "NaN"
+          ],
+          "t_test": [
+            "NaN",
+            "NaN"
+          ]
+        },
+        "details": "",
+        "reason": ""
+      },
+      "vgg19": {
+        "cifar10": {
+          "accuracy": [
+            10.48,
+            50.12
+          ],
+          "t_test": [
+            "NaN",
+            "NaN"
+          ]
+        },
+        "cifar100": {
+          "accuracy": [
+            "NaN",
+            "NaN"
+          ],
+          "t_test": [
+            "NaN",
+            "NaN"
+          ]
+        },
+        "details": "",
+        "reason": ""
+      }
     },
-    "soa":{
-
-    }
-}
+    "soa": null
+  }
