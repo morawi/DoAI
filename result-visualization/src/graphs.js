@@ -40,13 +40,13 @@ export default class GraphBox extends Component {
     render() { return (
         <div > 
             <div className="dropdown"> 
-                <button className="dropbtn">Select A Pre-Trained Model</button>
+                <button className="dropbtn">Select A Trained Model</button>
                 <div className="dropdown-content">
                     {trained_models.map((model, i) => <button onClick={this.handleTrained}>{model}</button>)}       
                 </div>
             </div>
             <div className="dropdown"> 
-                <button className="dropbtn">Select A Pre-Trained Model</button>
+                <button className="dropbtn">Select A State of the Art Model</button>
                 <div className="dropdown-content">
                     {StateOfTheArtModels.map((model, i) => <button onClick={this.handleSOA}>{model}</button>)}       
                 </div>
@@ -54,6 +54,7 @@ export default class GraphBox extends Component {
             <div > 
                 <div className='graph-container'>
                     <div className="graph">
+                        Accuracy Graph
                         <Bar
                             data={{
                                 labels: ['CIFAR-10: Accuracy 1', 'CIFAR-10: Accuracy 5', 'CIFAR-100: Accuracy 1', 'CIFAR-100: Accuracy 5'],
@@ -98,6 +99,7 @@ export default class GraphBox extends Component {
                         />
                         </div>
                         <div className="graph">
+                        T-Test Graph
                         <Bar
                             data={{
                                 labels: ['CIFAR-10: T-Test Val 1', 'CIFAR-10: T-Test Val 5', 'CIFAR-100: T-Test Val 1', 'CIFAR-100: T-Test Val 5'],
@@ -138,16 +140,16 @@ export default class GraphBox extends Component {
                         </div>
                     </div>
                 <div className="details-container">
-                <div className="detail">
-                <p><i>{ model_name }: </i> { window.data.details }</p>
-                
-            </div>
-            <div className="detail">
-                <p><i>Reason: </i> { window.data.reason }</p>
+                    <div className="detail">
+                        <p><i>{ model_name }: </i> { window.data.details }</p>
+                    
+                    </div>
+                    <div className="detail">
+                        <p><i>Analysis: </i> { window.data.reason }</p>
+                    </div>
+                </div>
             </div>
         </div>
-        </div>
-    </div>
     )
 }
 }

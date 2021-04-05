@@ -27,6 +27,7 @@
   float: left;
   width: 50%;   
   height: 60vh;                          /*vh is basiclly vertical percentage*/
+  padding-bottom: 15px;
   box-shadow: 1px 1px 1px 1px black;  /* get rid of shadow once graphs are added 
   Box shadow is only being used to outline the where the graphs will be*/
 }
@@ -47,9 +48,9 @@
   margin: auto;  
   height: 100%;
   border: 1px solid black;
-  border-radius: 5px;
+  border-radius: 25px;
   background-color: rgb(238, 238, 238);
-  box-shadow: 10px 5px 8px  #cacaca;
+  box-shadow: 10px 5px 8px  #cacaca;  
 }
 
 .dropbtn {
