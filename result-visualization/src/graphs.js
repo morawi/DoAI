@@ -100,7 +100,7 @@ export default class GraphBox extends Component {
                         <div className="graph">
                         <Bar
                             data={{
-                                labels: ['CIFAR-10: Accuracy 1', 'CIFAR-10: Accuracy 5', 'CIFAR-100: Accuracy 1', 'CIFAR-100: Accuracy 5'],
+                                labels: ['CIFAR-10: T-Test Val 1', 'CIFAR-10: T-Test Val 5', 'CIFAR-100: T-Test Val 1', 'CIFAR-100: T-Test Val 5'],
                                 datasets: [{
                                         label: window.data.name,
                                         data: t_test_vals,   
