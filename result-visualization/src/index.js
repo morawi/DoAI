@@ -4,8 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-window.data = "";           //global variable to be used in components as data from results.json
-
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(

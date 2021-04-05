@@ -10,16 +10,14 @@ const Details = (props) => {
         TODO: Implement Scrollable list 
     */ 
 
-    var data = require('./results.json');
-    //console.log(data);
     return (
        <div className="details-container">
            <div className="detail">
-               <p><i>{ data.trained.vgg19.name }: </i> { data.trained.vgg19.details }</p>
+               <p><i>{ window.data.name }: </i> { window.data.details }</p>
                
            </div>
            <div className="detail">
-               <p><i>Reason: </i> { data.trained.vgg19.reason }</p>
+               <p><i>Reason: </i> { window.data.reason }</p>
            </div>
        </div>
     );
