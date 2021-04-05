@@ -1,317 +1,414 @@
 {
-    "trained": {
-      "densenet121": {
-        "cifar10": {
-          "accuracy": [
-            72.68,
-            97.72
-          ],
-          "t_test": [
-            2621.04,
-            2064.41
-          ]
-        },
-        "cifar100": {
-          "accuracy": [
-            44.76,
-            74.32
-          ],
-          "t_test": [
-            1807.13,
-            2982.71
-          ]
-        },
-        "details": "",
-        "reason": ""
+  "trained": {
+    "densenet121": {
+      "cifar10": {
+        "accuracy": [
+          72.68,
+          97.72
+        ],
+        "t_test": [
+          2621.04,
+          2064.41
+        ]
       },
-      "densenet161": {
-        "cifar10": {
-          "accuracy": [
-            78.08,
-            98.56
-          ],
-          "t_test": [
-            2903.49,
-            2048.88
-          ]
-        },
-        "cifar100": {
-          "accuracy": [
-            44.04,
-            73.12
-          ],
-          "t_test": [
-            1756.01,
-            2943.05
-          ]
-        },
-        "details": "",
-        "reason": ""
+      "cifar100": {
+        "accuracy": [
+          44.76,
+          74.32
+        ],
+        "t_test": [
+          1807.13,
+          2982.71
+        ]
       },
-      "densenet169": {
-        "cifar10": {
-          "accuracy": [
-            70.48,
-            97.46
-          ],
-          "t_test": [
-            2428.28,
-            2077.46
-          ]
-        },
-        "cifar100": {
-          "accuracy": [
-            39.18,
-            69.88
-          ],
-          "t_test": [
-            1749.97,
-            2815.93
-          ]
-        },
-        "details": "",
-        "reason": ""
-      },
-      "densenet201": {
-        "cifar10": {
-          "accuracy": [
-            65.72,
-            96.44
-          ],
-          "t_test": [
-            2145.68,
-            1940.04
-          ]
-        },
-        "cifar100": {
-          "accuracy": [
-            36.5,
-            67.0
-          ],
-          "t_test": [
-            1554.91,
-            2537.63
-          ]
-        },
-        "details": "",
-        "reason": ""
-      },
-      "resnet18": {
-        "cifar10": {
-          "accuracy": [
-            79.22,
-            98.52
-          ],
-          "t_test": [
-            3018.19,
-            2018.25
-          ]
-        },
-        "cifar100": {
-          "accuracy": [
-            53.26,
-            81.0
-          ],
-          "t_test": [
-            2332.75,
-            3772.63
-          ]
-        },
-        "details": "Resnet models are cool",
-        "reason": "Performs better on CIFAR 10"
-      },
-      "resnet34": {
-        "cifar10": {
-          "accuracy": [
-            79.92,
-            98.46
-          ],
-          "t_test": [
-            3099.62,
-            2166.93
-          ]
-        },
-        "cifar100": {
-          "accuracy": [
-            48.68,
-            76.58
-          ],
-          "t_test": [
-            1960.44,
-            3198.78
-          ]
-        },
-        "details": "Resnet models are cool",
-        "reason": "Performs much better on CIFAR 10"
-      },
-      "vgg11": {
-        "cifar10": {
-          "accuracy": [
-            10.04,
-            50.24
-          ],
-          "t_test": [
-            "NaN",
-            "NaN"
-          ]
-        },
-        "cifar100": {
-          "accuracy": [
-            1.04,
-            5.22
-          ],
-          "t_test": [
-            "NaN",
-            "NaN"
-          ]
-        },
-        "details": "",
-        "reason": ""
-      },
-      "vgg11_bn": {
-        "cifar10": {
-          "accuracy": [
-            89.42,
-            99.6
-          ],
-          "t_test": [
-            3914.82,
-            2170.56
-          ]
-        },
-        "cifar100": {
-          "accuracy": [
-            61.16,
-            85.94
-          ],
-          "t_test": [
-            2599.04,
-            4202.78
-          ]
-        },
-        "details": "",
-        "reason": ""
-      },
-      "vgg13": {
-        "cifar10": {
-          "accuracy": [
-            9.78,
-            50.82
-          ],
-          "t_test": [
-            "NaN",
-            "NaN"
-          ]
-        },
-        "cifar100": {
-          "accuracy": [
-            1.02,
-            5.0
-          ],
-          "t_test": [
-            "NaN",
-            "NaN"
-          ]
-        },
-        "details": "",
-        "reason": ""
-      },
-      "vgg13_bn": {
-        "cifar10": {
-          "accuracy": [
-            88.14,
-            99.7
-          ],
-          "t_test": [
-            3929.33,
-            2104.95
-          ]
-        },
-        "cifar100": {
-          "accuracy": [
-            59.36,
-            85.84
-          ],
-          "t_test": [
-            2552.38,
-            4261.85
-          ]
-        },
-        "details": "",
-        "reason": ""
-      },
-      "vgg16": {
-        "cifar10": {
-          "accuracy": [
-            10.3,
-            49.24
-          ],
-          "t_test": [
-            "NaN",
-            "NaN"
-          ]
-        },
-        "cifar100": {
-          "accuracy": [
-            0.88,
-            5.38
-          ],
-          "t_test": [
-            "NaN",
-            "NaN"
-          ]
-        },
-        "details": "",
-        "reason": ""
-      },
-      "vgg16_bn": {
-        "cifar10": {
-          "accuracy": [
-            89.76,
-            99.62
-          ],
-          "t_test": [
-            4111.37,
-            2250.4
-          ]
-        },
-        "cifar100": {
-          "accuracy": [
-            "NaN",
-            "NaN"
-          ],
-          "t_test": [
-            "NaN",
-            "NaN"
-          ]
-        },
-        "details": "",
-        "reason": ""
-      },
-      "vgg19": {
-        "cifar10": {
-          "accuracy": [
-            10.48,
-            50.12
-          ],
-          "t_test": [
-            "NaN",
-            "NaN"
-          ]
-        },
-        "cifar100": {
-          "accuracy": [
-            "NaN",
-            "NaN"
-          ],
-          "t_test": [
-            "NaN",
-            "NaN"
-          ]
-        },
-        "details": "",
-        "reason": ""
-      }
+      "details": "DenseNet(Densely Connected Convolutional Networks) is one of the latest neural networks for visual object recognition. For each layer, the feature-maps of all preceding layers are used as inputs, and its own feature-maps are used as inputs into all subsequent layers(Number of layers: 121).",
+      "reason": "Performs much better on CIFAR 10"
     },
-    "soa": null
+    "densenet161": {
+      "cifar10": {
+        "accuracy": [
+          78.08,
+          98.56
+        ],
+        "t_test": [
+          2903.49,
+          2048.88
+        ]
+      },
+      "cifar100": {
+        "accuracy": [
+          44.04,
+          73.12
+        ],
+        "t_test": [
+          1756.01,
+          2943.05
+        ]
+      },
+      "details": "DenseNet(Densely Connected Convolutional Networks) is one of the latest neural networks for visual object recognition. For each layer, the feature-maps of all preceding layers are used as inputs, and its own feature-maps are used as inputs into all subsequent layers(Number of layers: 161).",
+      "reason": "Performs much better on CIFAR 10"
+    },
+    "densenet169": {
+      "cifar10": {
+        "accuracy": [
+          70.48,
+          97.46
+        ],
+        "t_test": [
+          2428.28,
+          2077.46
+        ]
+      },
+      "cifar100": {
+        "accuracy": [
+          39.18,
+          69.88
+        ],
+        "t_test": [
+          1749.97,
+          2815.93
+        ]
+      },
+      "details": "DenseNet(Densely Connected Convolutional Networks) is one of the latest neural networks for visual object recognition. For each layer, the feature-maps of all preceding layers are used as inputs, and its own feature-maps are used as inputs into all subsequent layers(Number of layers: 169).",
+      "reason": "Performs much better on CIFAR 10"
+    },
+    "densenet201": {
+      "cifar10": {
+        "accuracy": [
+          65.72,
+          96.44
+        ],
+        "t_test": [
+          2145.68,
+          1940.04
+        ]
+      },
+      "cifar100": {
+        "accuracy": [
+          36.5,
+          67.0
+        ],
+        "t_test": [
+          1554.91,
+          2537.63
+        ]
+      },
+      "details": "DenseNet(Densely Connected Convolutional Networks) is one of the latest neural networks for visual object recognition. For each layer, the feature-maps of all preceding layers are used as inputs, and its own feature-maps are used as inputs into all subsequent layers(Number of layers: 201).",
+      "reason": "Performs much better on CIFAR 10"
+    },
+    "resnet18": {
+      "cifar10": {
+        "accuracy": [
+          79.22,
+          98.52
+        ],
+        "t_test": [
+          3018.19,
+          2018.25
+        ]
+      },
+      "cifar100": {
+        "accuracy": [
+          53.26,
+          81.0
+        ],
+        "t_test": [
+          2332.75,
+          3772.63
+        ]
+      },
+      "details": "ResNet is a powerful backbone model that is used very frequently in many computer vision tasks. ResNet uses skip connection to add the output from an earlier layer to a later layer. This helps it mitigate the vanishing gradient problem.",
+      "reason": "Performs better on CIFAR 10"
+    },
+    "resnet34": {
+      "cifar10": {
+        "accuracy": [
+          79.92,
+          98.46
+        ],
+        "t_test": [
+          3099.62,
+          2166.93
+        ]
+      },
+      "cifar100": {
+        "accuracy": [
+          48.68,
+          76.58
+        ],
+        "t_test": [
+          1960.44,
+          3198.78
+        ]
+      },
+      "details": "ResNet is a powerful backbone model that is used very frequently in many computer vision tasks. ResNet uses skip connection to add the output from an earlier layer to a later layer. This helps it mitigate the vanishing gradient problem.",
+      "reason": "Performs better on CIFAR 10"
+    },
+    "squeezenet1_0": {
+      "cifar10": {
+        "accuracy": [
+          10.02,
+          49.22
+        ],
+        "t_test": [
+          "",
+          ""
+        ]
+      },
+      "cifar100": {
+        "accuracy": [
+          1.0,
+          4.96
+        ],
+        "t_test": [
+          "",
+          ""
+        ]
+      },
+      "details": "SqueezeNet v1.1 is a smaller neural network with fewer parameters that can more easily fit into computer memory and can more easily be transmitted over a computer network. A model compression technique called Deep Compression can be applied to SqueezeNet to further reduce the size of the parameter file from 5MB to 500KB.",
+      "reason": "This model was unable to beat chance level and resulted in a NaN value T-Statistic"
+    },
+    "squeezenet1_1": {
+      "cifar10": {
+        "accuracy": [
+          9.24,
+          49.4
+        ],
+        "t_test": [
+          "",
+          ""
+        ]
+      },
+      "cifar100": {
+        "accuracy": [
+          1.0,
+          4.53
+        ],
+        "t_test": [
+          "",
+          ""
+        ]
+      },
+      "details": "SqueezeNet v1.1 has 2.4x less computation than v1.0, without sacrificing accuracy.",
+      "reason": "This model was unable to beat chance level and resulted in a NaN value T-Statistic"
+    },
+    "vgg11": {
+      "cifar10": {
+        "accuracy": [
+          10.04,
+          50.24
+        ],
+        "t_test": [
+          "",
+          ""
+        ]
+      },
+      "cifar100": {
+        "accuracy": [
+          1.04,
+          5.22
+        ],
+        "t_test": [
+          "",
+          ""
+        ]
+      },
+      "details": "VGG is a classical convolutional neural network architecture. The network utilises small 3x3 filters. Other components being pooling layers and a fully connected layer.",
+      "reason": "This model was unable to beat chance level and resulted in a NaN value T-Statistic. It did however perform better on CIFAR 10 compared to CIFAR 100"
+    },
+    "vgg11_bn": {
+      "cifar10": {
+        "accuracy": [
+          89.42,
+          99.6
+        ],
+        "t_test": [
+          3914.82,
+          2170.56
+        ]
+      },
+      "cifar100": {
+        "accuracy": [
+          61.16,
+          85.94
+        ],
+        "t_test": [
+          2599.04,
+          4202.78
+        ]
+      },
+      "details": "VGG is a classical convolutional neural network architecture. The network utilises small 3x3 filters. Other components being pooling layers and a fully connected layer. This model implements batch normalization. ",
+      "reason": "Performs much better on CIFAR 10. Performs significantly better than regular vgg models and it uses batch normalization(BN). BN has a tendency to improve accuracy and speed up training, making it a favourite technique in deep learning. "
+    },
+    "vgg13": {
+      "cifar10": {
+        "accuracy": [
+          9.78,
+          50.82
+        ],
+        "t_test": [
+          "",
+          ""
+        ]
+      },
+      "cifar100": {
+        "accuracy": [
+          1.02,
+          5.0
+        ],
+        "t_test": [
+          "",
+          ""
+        ]
+      },
+      "details": "VGG is a classical convolutional neural network architecture. The network utilises small 3x3 filters. Other components being pooling layers and a fully connected layer.",
+      "reason": "This model was unable to beat chance level and resulted in a NaN value T-Statistic. It did however perform better on CIFAR 10 compared to CIFAR 100"
+    },
+    "vgg13_bn": {
+      "cifar10": {
+        "accuracy": [
+          88.14,
+          99.7
+        ],
+        "t_test": [
+          3929.33,
+          2104.95
+        ]
+      },
+      "cifar100": {
+        "accuracy": [
+          59.36,
+          85.84
+        ],
+        "t_test": [
+          2552.38,
+          4261.85
+        ]
+      },
+      "details": "VGG is a classical convolutional neural network architecture. The network utilises small 3x3 filters. Other components being pooling layers and a fully connected layer. This model implements batch normalization. ",
+      "reason": "Performs much better on CIFAR 10. Performs significantly better than regular vgg models and it uses batch normalization(BN). BN has a tendency to improve accuracy and speed up training, making it a favourite technique in deep learning. "
+    },
+    "vgg16": {
+      "cifar10": {
+        "accuracy": [
+          10.3,
+          49.24
+        ],
+        "t_test": [
+          "",
+          ""
+        ]
+      },
+      "cifar100": {
+        "accuracy": [
+          0.88,
+          5.38
+        ],
+        "t_test": [
+          "",
+          ""
+        ]
+      },
+      "details": "VGG is a classical convolutional neural network architecture. The network utilises small 3x3 filters. Other components being pooling layers and a fully connected layer.",
+      "reason": "This model was unable to beat chance level and resulted in a NaN value T-Statistic. It did however perform better on CIFAR 10 compared to CIFAR 100"
+    },
+    "vgg16_bn": {
+      "cifar10": {
+        "accuracy": [
+          89.76,
+          99.62
+        ],
+        "t_test": [
+          4111.37,
+          2250.4
+        ]
+      },
+      "cifar100": {
+        "accuracy": [
+          56.86,
+          83.4
+        ],
+        "t_test": [
+          2501.49,
+          4058.17
+        ]
+      },
+      "details": "VGG is a classical convolutional neural network architecture. The network utilises small 3x3 filters. Other components being pooling layers and a fully connected layer. This model implements batch normalization. ",
+      "reason": "Performs much better on CIFAR 10. Performs significantly better than regular vgg models and it uses batch normalization(BN). BN has a tendency to improve accuracy and speed up training, making it a favourite technique in deep learning. "
+    },
+    "vgg19": {
+      "cifar10": {
+        "accuracy": [
+          10.48,
+          50.12
+        ],
+        "t_test": [
+          "",
+          ""
+        ]
+      },
+      "cifar100": {
+        "accuracy": [
+          1.06,
+          5.2
+        ],
+        "t_test": [
+          "",
+          ""
+        ]
+      },
+      "details": "VGG is a classical convolutional neural network architecture. The network utilises small 3x3 filters. Other components being pooling layers and a fully connected layer.",
+      "reason": "This model was unable to beat chance level and resulted in a NaN value T-Statistic. It did however perform better on CIFAR 10 compared to CIFAR 100"
+    },
+    "vgg19_bn": {
+      "cifar10": {
+        "accuracy": [
+          83.64,
+          99.16
+        ],
+        "t_test": [
+          3392.72,
+          2096.42
+        ]
+      },
+      "cifar100": {
+        "accuracy": [
+          34.66,
+          66.96
+        ],
+        "t_test": [
+          1587.02,
+          2536.13
+        ]
+      },
+      "details": "VGG is a classical convolutional neural network architecture. The network utilises small 3x3 filters. Other components being pooling layers and a fully connected layer. This model implements batch normalization. ",
+      "reason": "Performs much better on CIFAR 10. Performs significantly better than regular vgg models and it uses batch normalization(BN). BN has a tendency to improve accuracy and speed up training, making it a favourite technique in deep learning. "
+    }
+  },
+  "soa": {
+    "soa_example": {
+      "cifar10": {
+        "accuracy": [
+          10.48,
+          50.12
+        ],
+        "t_test": [
+          "NaN",
+          "NaN"
+        ]
+      },
+      "cifar100": {
+        "accuracy": [
+          "NaN",
+          "NaN"
+        ],
+        "t_test": [
+          "NaN",
+          "NaN"
+        ]
+      },
+      "details": "This is not real. We havent testeda any state of the arts models yet ",
+      "reason": ""
+    }
   }
+}
