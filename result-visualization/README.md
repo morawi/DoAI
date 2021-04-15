@@ -23,6 +23,7 @@ You will also see any lint errors in the console.
 
 ### USAGE
 This front-end is entirely dynamic as we wanted to make it as easy as possible to add in a new models that have been trained or add in results for state of the art models. To add a new model into the front end simply update the results.JSON file in the src folder. The JSON is formatted in a way that will display the graphs and data appropriately so follow the format.\
+```
     {
         "trained": {
             "model_name" : {
@@ -58,4 +59,5 @@ This front-end is entirely dynamic as we wanted to make it as easy as possible t
             }
         }
     }
+```
 If you are adding in a trained model insert it into the "trained" JSON object adn insert the data in as explained above. If you are inserting in a state of the art model insert it into the "soa" JSON object and follow the above format.
