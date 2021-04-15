@@ -1,4 +1,4 @@
-import { Bar } from "react-chartjs-2";
+import { Bar, Line } from "react-chartjs-2";
 import {Component} from "react";
 
 
@@ -6,6 +6,7 @@ import {Component} from "react";
 var data = require('./results.json'); 
 var trained_models = [];
 var StateOfTheArtModels = [];
+var labels = []
 
 
 for(var i in data.trained){
@@ -14,7 +15,17 @@ for(var i in data.trained){
 for(var i in data.soa){
     StateOfTheArtModels.push(i);             //add names of trained models to list to display model names (doing this so its dynamic)
 }
-var results = [data.trained.densenet121.cifar10.accuracy[0],data.trained.densenet121.cifar10.accuracy[1],data.trained.densenet121.cifar100.accuracy[0], data.trained.densenet121.cifar100.accuracy[1]]; //first 2 elements for cifar10, 3rd and 4th for cifar 100
+var i=0;
+while (i<100)
+  {
+  i++;
+  labels.push(i);
+  }
+console.log(labels)
+var cifar10_acc1 = data.trained.densenet121.cifar10.acc_1; 
+var cifar10_acc5 = data.trained.densenet121.cifar10.acc_5;
+var cifar100_acc1 = data.trained.densenet121.cifar100.acc_1; 
+var cifar100_acc5 = data.trained.densenet121.cifar100.acc_5;  
 var t_test_vals = [data.trained.densenet121.cifar10.t_test[0],data.trained.densenet121.cifar10.t_test[1],data.trained.densenet121.cifar100.t_test[0], data.trained.densenet121.cifar100.t_test[1]]; //first 2 elements for cifar10, 3rd and 4th for cifar 100
 //console.log(t_test_vals);
 var model_name = "densenet121";
@@ -23,19 +34,24 @@ export default class GraphBox extends Component {
         //console.log(e)
         model_name = e.target.innerText;
         window.data = data.trained[model_name];
-        results = [window.data.cifar10.accuracy[0],window.data.cifar10.accuracy[1],window.data.cifar100.accuracy[0], window.data.cifar100.accuracy[1]]; //first 2 elements for cifar10, 3rd and 4th for cifar 100
+        //console.log(window.data.cifar10)
+        cifar10_acc1 = window.data.cifar10.acc_1; 
+        cifar10_acc5 = window.data.cifar10.acc_5; 
+        cifar100_acc1 = window.data.cifar100.acc_1; 
+        cifar100_acc5 = window.data.cifar100.acc_5;
         t_test_vals = [window.data.cifar10.t_test[0],window.data.cifar10.t_test[1],window.data.cifar100.t_test[0], window.data.cifar100.t_test[1]];
-        //console.log(results)
-        this.setState(results)
+        console.log(window.data)
+        this.setState(cifar10_acc1)
     }
     handleSOA = (e) => {
         //console.log(e)
         model_name = e.target.innerText;
         window.data = data.soa[model_name];
-        results = [window.data.cifar10.accuracy[0],window.data.cifar10.accuracy[1],window.data.cifar100.accuracy[0], window.data.cifar100.accuracy[1]]; //first 2 elements for cifar10, 3rd and 4th for cifar 100
+        cifar10_acc1 = window.data.cifar10.acc_1; 
+        cifar10_acc5 = window.data.cifar10.acc_5; 
         t_test_vals = [window.data.cifar10.t_test[0],window.data.cifar10.t_test[1],window.data.cifar100.t_test[0], window.data.cifar100.t_test[1]];
         //console.log(results)
-        this.setState(results)
+        this.setState(cifar10_acc1)
     }
     render() { return (
         <div > 
@@ -54,33 +70,50 @@ export default class GraphBox extends Component {
             <div > 
                 <div className='graph-container'>
                     <div className="graph">
-                        <Bar
+                        <Line
                             data={{
-                                labels: ['CIFAR-10: Accuracy 1', 'CIFAR-10: Accuracy 5', 'CIFAR-100: Accuracy 1', 'CIFAR-100: Accuracy 5'],
+                                labels: labels,
                                 datasets: [{
-                                        label: window.data.name,
-                                        data: results,   
-                                        backgroundColor: [
-                                            'rgba(255, 99, 132, 0.2)',
-                                            'rgba(255, 99, 132, 0.2)',
-                                            'rgba(54, 162, 235, 0.2)',
-                                            'rgba(54, 162, 235, 0.2)'
-                                        ],
+                                        label: model_name + " Cifar10 Acc1",
+                                        data: cifar10_acc1,
                                         borderColor: [
-                                            'rgba(255, 99, 132, 1)',
-                                            'rgba(255, 99, 132, 1)',
-                                            'rgba(54, 162, 235, 1)',
-                                            'rgba(54, 162, 235, 1)'
+                                            'rgba(255, 140, 140, 1)'
                                         ],
-                                        borderWidth: 1
-                                }]
+                                        fill: false,
+                                        borderWidth: 3
+                                    },{
+                                        label: model_name + " Cifar10 Acc5",
+                                        data: cifar10_acc5,
+                                        borderColor: [
+                                            'rgba(255, 0, 0, 1)'                                            
+                                        ],
+                                        fill: false,
+                                        borderWidth: 3
+                                    },{
+                                        label: model_name + " Cifar100 Acc1",
+                                        data: cifar100_acc1,
+                                        borderColor: [
+                                            'rgba(0, 255, 200, 1)'
+                                        ],
+                                        fill: false,
+                                        borderWidth: 3
+                                    },{
+                                        label: model_name + " Cifar100 Acc5",
+                                        data: cifar100_acc5,
+                                        borderColor: [
+                                            'rgba(0, 255, 255, 1)'                                            
+                                        ],
+                                        fill: false,
+                                        borderWidth: 3
+                                    }
+                                ]   
                             }}
                             height={200}
                             width={300}
                             options={{ maintainAspectRatio: false,
                             legend:
                                 {
-                                    display: false
+                                    display: true
                                 },
                                 scales: {
                                     yAxes: [{
@@ -105,14 +138,14 @@ export default class GraphBox extends Component {
                                         label: window.data.name,
                                         data: t_test_vals,   
                                         backgroundColor: [
-                                            'rgba(255, 99, 132, 0.2)',
-                                            'rgba(255, 99, 132, 0.2)',
+                                            'rgba(255, 140, 140, 0.2)',
+                                            'rgba(255, 0, 0, 0.2)',
                                             'rgba(54, 162, 235, 0.2)',
                                             'rgba(54, 162, 235, 0.2)'
                                         ],
                                         borderColor: [
-                                            'rgba(255, 99, 132, 1)',
-                                            'rgba(255, 99, 132, 1)',
+                                            'rgba(255, 140, 140, 1)',
+                                            'rgba(255, 0, 0, 1)',
                                             'rgba(54, 162, 235, 1)',
                                             'rgba(54, 162, 235, 1)'
                                         ],

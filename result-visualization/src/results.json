@@ -2,44 +2,37 @@
   "trained": {
     "densenet121": {
       "cifar10": {
-        "accuracy": [
-          72.68,
-          97.72
-        ],
+        "acc_1": [19.980, 21.460, 24.480, 32.580, 39.380, 40.080, 41.540, 46.100, 46.620, 49.080, 49.900, 52.540, 49.560, 53.540, 55.000, 56.860, 55.380, 55.460, 57.420, 56.420, 57.980, 58.380, 60.380, 59.320, 61.480, 60.520, 61.480, 62.260, 62.260, 62.940, 66.700, 67.740, 68.160, 68.640, 67.880, 68.420, 68.760, 68.620, 69.000, 68.840, 69.460, 69.180, 69.320, 69.020, 69.240, 68.960, 70.800, 68.920, 69.840, 69.860, 69.680, 69.940, 70.380, 70.160, 70.460, 70.800, 70.800, 70.780, 71.620, 71.640, 72.420, 72.180, 72.160, 72.260, 72.200, 72.340, 72.380, 72.440, 72.560, 72.520, 72.520, 72.660, 72.640, 72.640, 72.240, 72.500, 72.320, 72.480, 72.620, 72.480, 72.220, 72.420, 72.220, 72.540, 72.680, 72.640, 72.500, 72.620, 72.500, 72.800, 72.800, 72.460, 72.980, 72.880, 72.440, 72.800, 72.840, 72.600, 72.560, 72.680],
+        "acc_5":[76.640, 78.360, 79.340, 85.020, 88.180, 89.500, 89.020, 90.880, 92.360, 92.700, 92.700, 93.600, 92.140, 94.080, 93.880, 95.020, 93.580, 95.260, 95.500, 93.980, 95.020, 95.340, 95.360, 95.740, 96.120, 96.000, 95.940, 96.580, 96.160, 96.600, 97.320, 97.460, 97.280, 97.300, 97.500, 97.540, 97.480, 97.320, 97.480, 97.380, 97.520, 97.700, 97.640, 97.460, 97.720, 97.640, 97.660, 97.560, 97.620, 97.760, 97.820, 97.920, 97.580, 97.800, 97.700, 97.760, 97.660, 97.880, 97.840, 97.940, 97.860, 97.640, 97.780, 97.800, 97.700, 97.700, 97.700, 97.700, 97.860, 97.660, 97.760, 97.760, 97.760, 97.800, 97.800, 97.820, 97.780, 97.800, 97.800, 97.780, 97.900, 97.860, 97.660, 97.720, 97.820, 97.760, 97.860, 97.940, 97.800, 97.720, 97.680, 97.800, 97.840, 97.840, 97.720, 97.720, 97.980, 97.800, 97.840, 97.720],
         "t_test": [
           2621.04,
           2064.41
         ]
       },
       "cifar100": {
-        "accuracy": [
-          44.76,
-          74.32
-        ],
+        "acc_1": [2.960, 4.760, 6.440, 10.160, 11.360, 12.780, 13.000, 16.420, 17.240, 19.300, 22.080, 22.480, 21.780, 25.800, 25.800, 25.780, 25.720, 26.260, 27.020, 28.920, 28.480, 29.520, 29.340, 30.640, 28.020, 30.620, 26.800, 31.640, 32.500, 34.600, 38.640, 39.140, 39.460, 40.080, 40.400, 40.240, 40.560, 40.460, 40.300, 40.340, 40.120, 40.400, 40.620, 40.460, 41.720, 41.840, 40.980, 40.660, 41.740, 41.560, 41.800, 41.860, 41.480, 42.680, 42.760, 42.180, 42.900, 42.500, 41.620, 42.640, 43.960, 44.120, 43.880, 44.080, 43.940, 44.140, 43.920, 44.000, 44.280, 44.060, 44.220, 44.200, 44.020, 44.160, 44.240, 44.080, 44.500, 44.160, 44.280, 44.380, 44.420, 44.240, 44.120, 44.200, 43.660, 44.260, 43.720, 44.080, 44.040, 44.340, 44.540, 44.040, 44.560, 44.440, 44.460, 44.220, 44.500, 44.180, 44.520, 44.760],
+        "acc_5":[10.400, 18.740, 24.060, 29.620, 32.320, 36.580, 38.200, 41.840, 44.100, 47.280, 49.660, 50.160, 50.820, 53.240, 53.880, 54.520, 54.820, 55.340, 57.920, 59.200, 59.320, 58.720, 58.920, 60.200, 58.780, 61.080, 57.260, 62.720, 63.140, 66.300, 69.840, 69.680, 70.100, 69.960, 70.600, 70.880, 70.080, 69.940, 70.760, 70.920, 71.400, 70.620, 70.620, 71.180, 72.120, 72.020, 71.940, 71.980, 71.060, 71.360, 72.260, 71.260, 72.280, 71.420, 72.360, 72.340, 72.200, 72.920, 71.240, 72.940, 73.040, 73.240, 73.200, 73.340, 73.080, 73.460, 73.440, 73.320, 73.600, 73.640, 73.680, 73.380, 73.640, 73.740, 73.520, 74.080, 74.020, 73.920, 73.720, 73.940, 73.560, 73.840, 73.820, 73.740, 73.440, 73.580, 74.000, 74.220, 74.000, 73.960, 73.880, 73.920, 73.560, 73.620, 74.000, 73.700, 73.700, 73.900, 73.980, 74.320],
         "t_test": [
           1807.13,
           2982.71
         ]
       },
+      "name": "densenet121",
       "details": "DenseNet(Densely Connected Convolutional Networks) is one of the latest neural networks for visual object recognition. For each layer, the feature-maps of all preceding layers are used as inputs, and its own feature-maps are used as inputs into all subsequent layers(Number of layers: 121).",
       "reason": "Performs much better on CIFAR 10"
     },
     "densenet161": {
       "cifar10": {
-        "accuracy": [
-          78.08,
-          98.56
-        ],
+        "acc_1": [16.900, 27.080, 30.400, 35.700, 39.840, 10.760, 40.300, 44.500, 46.160, 46.160, 49.560, 48.860, 49.840, 53.200, 55.820, 54.980, 56.020, 58.180, 60.780, 60.380, 61.480, 60.060, 63.200, 62.100, 63.640, 64.900, 66.740, 64.840, 66.760, 68.360, 72.260, 73.380, 73.760, 73.420, 73.840, 74.100, 75.260, 73.840, 74.700, 73.840, 74.820, 74.740, 75.260, 74.680, 74.920, 75.240, 75.500, 75.460, 75.500, 75.340, 75.400, 74.320, 74.780, 76.140, 76.340, 76.080, 76.360, 76.300, 75.580, 75.980, 76.800, 77.300, 77.140, 77.300, 77.260, 77.120, 77.580, 77.620, 77.800, 77.780, 77.400, 77.600, 77.700, 77.760, 77.620, 78.020, 77.620, 77.640, 77.520, 77.460, 77.600, 77.700, 77.700, 77.820, 77.500, 77.660, 78.020, 78.240, 77.700, 77.920, 77.920, 77.760, 78.000, 78.320, 78.160, 78.100, 78.180, 78.220, 78.080, 78.080],
+        "acc_5": [69.900, 83.160, 84.760, 87.400, 89.220, 49.380, 90.220, 91.960, 90.960, 91.680, 92.860, 94.260, 93.720, 94.420, 95.120, 94.320, 94.320, 95.480, 96.240, 95.180, 95.140, 96.280, 96.660, 95.180, 96.340, 96.420, 96.660, 96.960, 97.280, 97.320, 97.480, 97.940, 97.860, 98.040, 97.880, 98.060, 98.140, 98.220, 98.320, 98.200, 98.220, 98.200, 98.380, 98.180, 98.420, 98.320, 98.400, 98.360, 98.680, 98.580, 98.640, 98.580, 98.280, 98.600, 98.420, 98.480, 98.500, 98.500, 98.300, 98.540, 98.540, 98.680, 98.720, 98.680, 98.560, 98.700, 98.660, 98.720, 98.720, 98.620, 98.700, 98.640, 98.520, 98.640, 98.640, 98.640, 98.620, 98.700, 98.600, 98.500, 98.560, 98.480, 98.480, 98.600, 98.580, 98.640, 98.560, 98.460, 98.600, 98.580, 98.520, 98.420, 98.540, 98.540, 98.560, 98.580, 98.600, 98.480, 98.620, 98.560],
         "t_test": [
           2903.49,
           2048.88
         ]
       },
       "cifar100": {
-        "accuracy": [
-          44.04,
-          73.12
-        ],
+        "acc_1": [1.720, 4.840, 8.800, 9.980, 11.400, 10.660, 13.140, 13.940, 14.260, 15.060, 17.000, 17.680, 20.320, 21.520, 22.020, 23.160, 22.720, 24.280, 23.760, 25.820, 25.880, 27.000, 27.520, 26.700, 28.060, 28.540, 30.540, 31.480, 30.920, 33.260, 36.460, 37.540, 37.620, 37.660, 38.460, 38.260, 38.680, 38.740, 39.300, 38.720, 39.360, 38.940, 38.920, 40.100, 40.040, 39.340, 39.820, 39.880, 40.920, 40.280, 41.300, 39.580, 40.980, 40.880, 40.880, 41.920, 41.800, 40.960, 42.040, 41.520, 42.900, 43.380, 43.240, 43.560, 43.560, 43.840, 43.900, 43.180, 43.720, 43.320, 43.480, 43.420, 43.500, 43.540, 43.820, 43.580, 43.180, 43.740, 43.560, 43.620, 43.340, 43.900, 43.940, 43.880, 43.900, 43.500, 43.940, 43.600, 43.960, 43.980, 44.060, 43.900, 44.300, 44.180, 44.420, 44.220, 44.300, 44.060, 44.280, 44.040],
+        "acc_5": [8.000, 19.120, 28.060, 31.400, 32.780, 33.720, 36.500, 38.760, 39.940, 40.320, 43.280, 45.360, 47.200, 47.980, 50.260, 51.760, 51.680, 53.300, 51.680, 54.980, 56.100, 56.680, 58.780, 57.160, 59.160, 58.420, 61.180, 62.280, 62.660, 63.240, 67.800, 68.520, 68.240, 68.140, 68.520, 68.980, 68.980, 68.980, 69.260, 69.380, 69.560, 69.200, 69.120, 70.360, 70.560, 70.780, 70.080, 71.100, 70.960, 71.060, 71.660, 69.400, 71.360, 70.060, 71.420, 71.500, 72.320, 71.880, 72.320, 71.900, 72.400, 73.040, 72.840, 73.160, 73.220, 73.260, 73.400, 72.900, 73.160, 72.860, 73.500, 73.480, 73.260, 73.360, 73.480, 72.780, 72.940, 73.140, 72.980, 72.960, 72.820, 72.980, 73.100, 72.860, 73.340, 73.180, 73.220, 72.920, 72.820, 73.740, 73.840, 73.360, 73.380, 73.000, 73.240, 73.400, 72.620, 73.200, 73.400, 73.120],
         "t_test": [
           1756.01,
           2943.05
@@ -47,342 +40,6 @@
       },
       "details": "DenseNet(Densely Connected Convolutional Networks) is one of the latest neural networks for visual object recognition. For each layer, the feature-maps of all preceding layers are used as inputs, and its own feature-maps are used as inputs into all subsequent layers(Number of layers: 161).",
       "reason": "Performs much better on CIFAR 10"
-    },
-    "densenet169": {
-      "cifar10": {
-        "accuracy": [
-          70.48,
-          97.46
-        ],
-        "t_test": [
-          2428.28,
-          2077.46
-        ]
-      },
-      "cifar100": {
-        "accuracy": [
-          39.18,
-          69.88
-        ],
-        "t_test": [
-          1749.97,
-          2815.93
-        ]
-      },
-      "details": "DenseNet(Densely Connected Convolutional Networks) is one of the latest neural networks for visual object recognition. For each layer, the feature-maps of all preceding layers are used as inputs, and its own feature-maps are used as inputs into all subsequent layers(Number of layers: 169).",
-      "reason": "Performs much better on CIFAR 10"
-    },
-    "densenet201": {
-      "cifar10": {
-        "accuracy": [
-          65.72,
-          96.44
-        ],
-        "t_test": [
-          2145.68,
-          1940.04
-        ]
-      },
-      "cifar100": {
-        "accuracy": [
-          36.5,
-          67.0
-        ],
-        "t_test": [
-          1554.91,
-          2537.63
-        ]
-      },
-      "details": "DenseNet(Densely Connected Convolutional Networks) is one of the latest neural networks for visual object recognition. For each layer, the feature-maps of all preceding layers are used as inputs, and its own feature-maps are used as inputs into all subsequent layers(Number of layers: 201).",
-      "reason": "Performs much better on CIFAR 10"
-    },
-    "resnet18": {
-      "cifar10": {
-        "accuracy": [
-          79.22,
-          98.52
-        ],
-        "t_test": [
-          3018.19,
-          2018.25
-        ]
-      },
-      "cifar100": {
-        "accuracy": [
-          53.26,
-          81.0
-        ],
-        "t_test": [
-          2332.75,
-          3772.63
-        ]
-      },
-      "details": "ResNet is a powerful backbone model that is used very frequently in many computer vision tasks. ResNet uses skip connection to add the output from an earlier layer to a later layer. This helps it mitigate the vanishing gradient problem.",
-      "reason": "Performs better on CIFAR 10"
-    },
-    "resnet34": {
-      "cifar10": {
-        "accuracy": [
-          79.92,
-          98.46
-        ],
-        "t_test": [
-          3099.62,
-          2166.93
-        ]
-      },
-      "cifar100": {
-        "accuracy": [
-          48.68,
-          76.58
-        ],
-        "t_test": [
-          1960.44,
-          3198.78
-        ]
-      },
-      "details": "ResNet is a powerful backbone model that is used very frequently in many computer vision tasks. ResNet uses skip connection to add the output from an earlier layer to a later layer. This helps it mitigate the vanishing gradient problem.",
-      "reason": "Performs better on CIFAR 10"
-    },
-    "squeezenet1_0": {
-      "cifar10": {
-        "accuracy": [
-          10.02,
-          49.22
-        ],
-        "t_test": [
-          "",
-          ""
-        ]
-      },
-      "cifar100": {
-        "accuracy": [
-          1.0,
-          4.96
-        ],
-        "t_test": [
-          "",
-          ""
-        ]
-      },
-      "details": "SqueezeNet v1.1 is a smaller neural network with fewer parameters that can more easily fit into computer memory and can more easily be transmitted over a computer network. A model compression technique called Deep Compression can be applied to SqueezeNet to further reduce the size of the parameter file from 5MB to 500KB.",
-      "reason": "This model was unable to beat chance level and resulted in a NaN value T-Statistic"
-    },
-    "squeezenet1_1": {
-      "cifar10": {
-        "accuracy": [
-          9.24,
-          49.4
-        ],
-        "t_test": [
-          "",
-          ""
-        ]
-      },
-      "cifar100": {
-        "accuracy": [
-          1.0,
-          4.53
-        ],
-        "t_test": [
-          "",
-          ""
-        ]
-      },
-      "details": "SqueezeNet v1.1 has 2.4x less computation than v1.0, without sacrificing accuracy.",
-      "reason": "This model was unable to beat chance level and resulted in a NaN value T-Statistic"
-    },
-    "vgg11": {
-      "cifar10": {
-        "accuracy": [
-          10.04,
-          50.24
-        ],
-        "t_test": [
-          "",
-          ""
-        ]
-      },
-      "cifar100": {
-        "accuracy": [
-          1.04,
-          5.22
-        ],
-        "t_test": [
-          "",
-          ""
-        ]
-      },
-      "details": "VGG is a classical convolutional neural network architecture. The network utilises small 3x3 filters. Other components being pooling layers and a fully connected layer.",
-      "reason": "This model was unable to beat chance level and resulted in a NaN value T-Statistic. It did however perform better on CIFAR 10 compared to CIFAR 100"
-    },
-    "vgg11_bn": {
-      "cifar10": {
-        "accuracy": [
-          89.42,
-          99.6
-        ],
-        "t_test": [
-          3914.82,
-          2170.56
-        ]
-      },
-      "cifar100": {
-        "accuracy": [
-          61.16,
-          85.94
-        ],
-        "t_test": [
-          2599.04,
-          4202.78
-        ]
-      },
-      "details": "VGG is a classical convolutional neural network architecture. The network utilises small 3x3 filters. Other components being pooling layers and a fully connected layer. This model implements batch normalization. ",
-      "reason": "Performs much better on CIFAR 10. Performs significantly better than regular vgg models and it uses batch normalization(BN). BN has a tendency to improve accuracy and speed up training, making it a favourite technique in deep learning. "
-    },
-    "vgg13": {
-      "cifar10": {
-        "accuracy": [
-          9.78,
-          50.82
-        ],
-        "t_test": [
-          "",
-          ""
-        ]
-      },
-      "cifar100": {
-        "accuracy": [
-          1.02,
-          5.0
-        ],
-        "t_test": [
-          "",
-          ""
-        ]
-      },
-      "details": "VGG is a classical convolutional neural network architecture. The network utilises small 3x3 filters. Other components being pooling layers and a fully connected layer.",
-      "reason": "This model was unable to beat chance level and resulted in a NaN value T-Statistic. It did however perform better on CIFAR 10 compared to CIFAR 100"
-    },
-    "vgg13_bn": {
-      "cifar10": {
-        "accuracy": [
-          88.14,
-          99.7
-        ],
-        "t_test": [
-          3929.33,
-          2104.95
-        ]
-      },
-      "cifar100": {
-        "accuracy": [
-          59.36,
-          85.84
-        ],
-        "t_test": [
-          2552.38,
-          4261.85
-        ]
-      },
-      "details": "VGG is a classical convolutional neural network architecture. The network utilises small 3x3 filters. Other components being pooling layers and a fully connected layer. This model implements batch normalization. ",
-      "reason": "Performs much better on CIFAR 10. Performs significantly better than regular vgg models and it uses batch normalization(BN). BN has a tendency to improve accuracy and speed up training, making it a favourite technique in deep learning. "
-    },
-    "vgg16": {
-      "cifar10": {
-        "accuracy": [
-          10.3,
-          49.24
-        ],
-        "t_test": [
-          "",
-          ""
-        ]
-      },
-      "cifar100": {
-        "accuracy": [
-          0.88,
-          5.38
-        ],
-        "t_test": [
-          "",
-          ""
-        ]
-      },
-      "details": "VGG is a classical convolutional neural network architecture. The network utilises small 3x3 filters. Other components being pooling layers and a fully connected layer.",
-      "reason": "This model was unable to beat chance level and resulted in a NaN value T-Statistic. It did however perform better on CIFAR 10 compared to CIFAR 100"
-    },
-    "vgg16_bn": {
-      "cifar10": {
-        "accuracy": [
-          89.76,
-          99.62
-        ],
-        "t_test": [
-          4111.37,
-          2250.4
-        ]
-      },
-      "cifar100": {
-        "accuracy": [
-          56.86,
-          83.4
-        ],
-        "t_test": [
-          2501.49,
-          4058.17
-        ]
-      },
-      "details": "VGG is a classical convolutional neural network architecture. The network utilises small 3x3 filters. Other components being pooling layers and a fully connected layer. This model implements batch normalization. ",
-      "reason": "Performs much better on CIFAR 10. Performs significantly better than regular vgg models and it uses batch normalization(BN). BN has a tendency to improve accuracy and speed up training, making it a favourite technique in deep learning. "
-    },
-    "vgg19": {
-      "cifar10": {
-        "accuracy": [
-          10.48,
-          50.12
-        ],
-        "t_test": [
-          "",
-          ""
-        ]
-      },
-      "cifar100": {
-        "accuracy": [
-          1.06,
-          5.2
-        ],
-        "t_test": [
-          "",
-          ""
-        ]
-      },
-      "details": "VGG is a classical convolutional neural network architecture. The network utilises small 3x3 filters. Other components being pooling layers and a fully connected layer.",
-      "reason": "This model was unable to beat chance level and resulted in a NaN value T-Statistic. It did however perform better on CIFAR 10 compared to CIFAR 100"
-    },
-    "vgg19_bn": {
-      "cifar10": {
-        "accuracy": [
-          83.64,
-          99.16
-        ],
-        "t_test": [
-          3392.72,
-          2096.42
-        ]
-      },
-      "cifar100": {
-        "accuracy": [
-          34.66,
-          66.96
-        ],
-        "t_test": [
-          1587.02,
-          2536.13
-        ]
-      },
-      "details": "VGG is a classical convolutional neural network architecture. The network utilises small 3x3 filters. Other components being pooling layers and a fully connected layer. This model implements batch normalization. ",
-      "reason": "Performs much better on CIFAR 10. Performs significantly better than regular vgg models and it uses batch normalization(BN). BN has a tendency to improve accuracy and speed up training, making it a favourite technique in deep learning. "
     }
   },
   "soa": {
