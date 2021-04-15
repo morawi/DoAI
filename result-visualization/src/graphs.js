@@ -67,6 +67,7 @@ export default class GraphBox extends Component {
                     {StateOfTheArtModels.map((model, i) => <button onClick={this.handleSOA}>{model}</button>)}       
                 </div>
             </div>
+            <h3> { model_name }</h3>
             <div > 
                 <div className='graph-container'>
                     <div className="graph">

@@ -37,7 +37,7 @@
 
 .details-container{
   margin-top: 20px;
-  height: 24vh;
+  height: 17vh;
   display: flex;  /* Google flexbox if you dont know what it is, its used alot in css */
   flex-direction: row;  /* Make items go side by side horizantally  */
 }
