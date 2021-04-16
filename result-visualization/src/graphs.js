@@ -26,7 +26,7 @@ var cifar10_acc1 = data.trained.densenet121.cifar10.acc_1;
 var cifar10_acc5 = data.trained.densenet121.cifar10.acc_5;
 var cifar100_acc1 = data.trained.densenet121.cifar100.acc_1; 
 var cifar100_acc5 = data.trained.densenet121.cifar100.acc_5;  
-var t_test_vals = [data.trained.densenet121.cifar10.t_test[0],data.trained.densenet121.cifar10.t_test[1],data.trained.densenet121.cifar100.t_test[0], data.trained.densenet121.cifar100.t_test[1]]; //first 2 elements for cifar10, 3rd and 4th for cifar 100
+var t_test_vals = [data.trained.densenet121.cifar10.t_test[1],data.trained.densenet121.cifar10.t_test[0],data.trained.densenet121.cifar100.t_test[1], data.trained.densenet121.cifar100.t_test[0]]; //first 2 elements for cifar10, 3rd and 4th for cifar 100
 //console.log(t_test_vals);
 var model_name = "densenet121";
 export default class GraphBox extends Component {
