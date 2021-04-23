@@ -5,16 +5,16 @@ import {Component} from "react";
 
 var data = require('./results.json'); 
 var trained_models = [];
-var StateOfTheArtModels = [];
+/* var StateOfTheArtModels = []; */
 var labels = []
 
 
 for(var i in data.trained){
     trained_models.push(i);             //add names of trained models to list to display model names (doing this so its dynamic)
 }
-for(var i in data.soa){
+/* for(var i in data.soa){
     StateOfTheArtModels.push(i);             //add names of trained models to list to display model names (doing this so its dynamic)
-}
+} */
 var i=0;
 while (i<100)
   {
@@ -43,7 +43,7 @@ export default class GraphBox extends Component {
         console.log(window.data)
         this.setState(cifar10_acc1)
     }
-    handleSOA = (e) => {
+/*     handleSOA = (e) => {
         //console.log(e)
         model_name = e.target.innerText;
         window.data = data.soa[model_name];
@@ -52,7 +52,7 @@ export default class GraphBox extends Component {
         t_test_vals = [window.data.cifar10.t_test[0],window.data.cifar10.t_test[1],window.data.cifar100.t_test[0], window.data.cifar100.t_test[1]];
         //console.log(results)
         this.setState(cifar10_acc1)
-    }
+    } */
     render() { return (
         <div > 
             <div className="dropdown"> 
@@ -61,12 +61,12 @@ export default class GraphBox extends Component {
                     {trained_models.map((model, i) => <button onClick={this.handleTrained}>{model}</button>)}       
                 </div>
             </div>
-            <div className="dropdown"> 
+ {/*            <div className="dropdown"> 
                 <button className="dropbtn">Select A Pre-Trained Model</button>
                 <div className="dropdown-content">
                     {StateOfTheArtModels.map((model, i) => <button onClick={this.handleSOA}>{model}</button>)}       
                 </div>
-            </div>
+            </div> */}
             <h3> { model_name }</h3>
             <div > 
                 <div className='graph-container'>
