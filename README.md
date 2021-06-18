@@ -10,8 +10,8 @@ We use classification accuracy metric in machine learning to measure model perfo
 However, this metric can be misleading for many reasons: data imbalance, percentage of samples incorrectly classified and number of classes.
 It would be interesting to address the latter.
 
-Now, the simplest (computer vision) classification problems to consider are the `CIFAR-10` and `CIFAR-100` datasets.
-The best reported performance is through this work and the code is available in PyTorch (the proposed model achieved 99.70% and 96.08 in CIFAR-10 and CIFAR-100, respectively).
+Now, the simplest (computer vision) classification problems to consider are based on the `CIFAR-10` and `CIFAR-100` datasets.
+The best reported performance is 99.70% in CIFAR-10 and 96.08% in CIFAR-100.
 
 ## The research question 
 
