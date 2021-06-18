@@ -21,6 +21,6 @@ To answer this question, we need to know how to statistically quantify the Model
 
 ## Methods
 
-This work is straightforward: data and code are publicly available. PyTorch platform supports data reading and deep learning models. Still, I can provide a novel technique that can be used to investigate the problem.
+This work is straightforward: data and code are publicly available. PyTorch platform supports data reading and deep learning models. We use the t-test statistic to investigate the problem.
 
-Students need to write the code necessary to implement the technique, on top of PyTorch models, and run the experiments. Other data sets containing more categories will also be used.
+We built the tests on top of PyTorch models. It would be interesting to test other data sets containing more categories.
